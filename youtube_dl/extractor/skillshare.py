@@ -44,7 +44,8 @@ class SkillshareBaseIE(InfoExtractor):
         user_type = user_json.get("membership_label", "Premium Member")
         if user_type == "Basic Member":
             self._user_type = 0
-        elif user_type == "Premium Member":
+        #elif user_type == "Premium Member":
+        elif user_type == "Premium Member" or "trial":
             self._user_type = 2
         else:
             raise ExtractorError("User type %s unknown" % user_json["membership_label"])
